@@ -26,10 +26,10 @@ Predictions = rw.prediction_types.make_multiclass(label_names=[0, 1, 2, 3])
 # -----------------------------------------------------------------------------
 
 score_types = [
-    rw.score_types.NegativeLogLikelihood(name='loss'),
-    rw.score_types.F1Above(name='f1'),
-    rw.score_types.BalancedAccuracy(name='balanced_accuracy'),
-    rw.score_types.MacroAveragedRecall(name='average_recall'),
+    rw.score_types.NegativeLogLikelihood(name="loss"),
+    rw.score_types.F1Above(name="f1"),
+    rw.score_types.BalancedAccuracy(name="balanced_accuracy"),
+    rw.score_types.MacroAveragedRecall(name="average_recall"),
 ]
 
 # -----------------------------------------------------------------------------
@@ -72,20 +72,19 @@ def get_cv(X, y):
 
 
 def _read_data(path, type_):
-
     fname = "data_{}.csv".format(type_)
     fp = os.path.join(path, "data", fname)
-    data = pd.read_csv(fp, low_memory=False, index_col='Unnamed: 0')
+    data = pd.read_csv(fp, low_memory=False, index_col="Unnamed: 0")
 
     # Format the columns "pr" and "pr1"
-    data.loc[data['pr1'] == '(1)', 'pr1'] = '1'
-    data.loc[data['pr'] == '(1)', 'pr'] = '1'
-    data['pr'] = data['pr'].astype(int)
-    data['pr1'] = data['pr1'].astype(int)
+    data.loc[data["pr1"] == "(1)", "pr1"] = "1"
+    data.loc[data["pr"] == "(1)", "pr"] = "1"
+    data["pr"] = data["pr"].astype(int)
+    data["pr1"] = data["pr1"].astype(int)
 
     fname = "labels_{}.csv".format(type_)
     fp = os.path.join(path, "data", fname)
-    y = pd.read_csv(fp)-1
+    y = pd.read_csv(fp) - 1
 
     # for the "quick-test" mode, use less data
     test = os.getenv("RAMP_TEST_MODE", 0)
@@ -94,7 +93,7 @@ def _read_data(path, type_):
         data = data[:N_small]
         y = y[:N_small]
 
-    return data, y.astype('int').to_numpy().ravel()
+    return data, y.astype("int").to_numpy().ravel()
 
 
 def get_train_data(path="."):
