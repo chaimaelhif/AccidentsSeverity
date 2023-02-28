@@ -14,8 +14,8 @@ from PIL import Image
 
 LOCAL_DATA = Path(__file__).parent / "data"
 
-CHALLENGE_NAME = "solar_wind"
-# you might choosing checking for the correct checksum, if not set
+CHALLENGE_NAME = "Accidents_Severity"
+# you might choose checking for the correct checksum, if not set
 # data_checksum to None
 RAMP_FOLDER_CONFIGURATION = {
     "public": dict(

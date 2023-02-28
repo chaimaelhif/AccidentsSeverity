@@ -1,13 +1,15 @@
-# RAMP starting kit on solar wind classification
+# RAMP starting kit on Accidents Severity classification
 
 
-_Authors: Gautier Nguyen, Joris van den Bossche, Nicolas Aunai & Balazs Kegl_
+_Authors: Chaima El Hif, Mohamed Ben Jebara, Nour Elkamel, Taher Asmi, Chaima Messai & Salma Ezzina_
 
-Interplanetary Coronal Mass Ejections (ICMEs) result from magnetic instabilities occurring in the Sun atmosphere, and interact with the planetary environment and may result in intense internal activity such as strong particle acceleration, so-called geomagnetic storms and geomagnetic induced currents. These effects have serious consequences regarding space and ground technologies and understanding them is part of the so-called space weather discipline.
+For each injury accident (i.e. an accident on a public roadway involving at least one vehicle and 
+at least one victim requiring medical attention), information describing the accident 
+is entered by the law enforcement unit (police, gendarmerie, etc.) that responded to the accident.
 
-ICMEs signatures as measured by in-situ spacecraft come as patterns in time series of the magnetic field, the particle density, bulk velocity, temperature etc. Although well visible by expert eyes, these patterns have quite variable characteristics which make naive automatization of their detection difficult.
+The goal of this RAMP is to detect the severity of each accident using these information. 
 
-The goal of this RAMP is to detect Interplanetary Coronal Mass Ejections (ICMEs) in the data measured by in-situ spacecraft.
+It's a multiclassification task.
 
 
 #### Set up

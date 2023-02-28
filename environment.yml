@@ -1,6 +1,5 @@
 name: ramp-solar-wind
 channels:
-  - defaults
   - conda-forge
 dependencies:
   - numpy

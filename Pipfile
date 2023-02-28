@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+scipy = "*"
+pandas = ">=0.23"
+scikit-learn = ">=0.20"
+pyarrow = "*"
+imbalanced-learn = "*"
+matplotlib = "*"
+joblib = "*"
+osfclient = "*"
+ramp-workflow = "*"
+jupyter = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
