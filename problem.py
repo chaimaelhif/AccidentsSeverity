@@ -15,12 +15,22 @@ problem_title = "Corporal Accidents Severity classification"
 
 workflow = Estimator()
 
-
 # -----------------------------------------------------------------------------
 # Predictions type
 # -----------------------------------------------------------------------------
 
-BaseMultiClassPredictions = rw.prediction_types.make_multiclass(label_names=[0, 1, 2, 3])
+Predictions = rw.prediction_types.make_multiclass(label_names=[0, 1, 2, 3])
+
+# -----------------------------------------------------------------------------
+# Score types
+# -----------------------------------------------------------------------------
+
+score_types = [
+    rw.score_types.NegativeLogLikelihood(name='loss'),
+    rw.score_types.F1Above(name='f1'),
+    rw.score_types.BalancedAccuracy(name='balanced_accuracy'),
+    rw.score_types.MacroAveragedRecall(name='average_recall'),
+]
 
 # -----------------------------------------------------------------------------
 # Cross-validation scheme
@@ -75,7 +85,7 @@ def _read_data(path, type_):
 
     fname = "labels_{}.csv".format(type_)
     fp = os.path.join(path, "data", fname)
-    y = pd.read_csv(fp)
+    y = pd.read_csv(fp)-1
 
     # for the "quick-test" mode, use less data
     test = os.getenv("RAMP_TEST_MODE", 0)
