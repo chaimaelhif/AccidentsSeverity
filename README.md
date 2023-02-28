@@ -25,7 +25,7 @@ Open a terminal and
 
 #### Local notebook
 
-Get started on this RAMP with the [dedicated notebook](solar_wind_starting_kit.ipynb).
+Get started on this RAMP with the [dedicated notebook](Accidents_Severity_starting_kit.ipynb).
 
 To test the starting-kit, run
 
